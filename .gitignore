@@ -1,0 +1,56 @@
+# Folder with data
+Data/
+
+# C++ Ignored Files
+*.o
+*.obj
+*.so
+*.dll
+*.dylib
+*.exe
+*.out
+*.a
+*.lib
+*.lo
+*.la
+*.gch
+*.pch
+*.dSYM/
+*.ipch/
+*.pdb
+*.ilk
+*.ds_store
+*.stackdump
+*.core
+*.elf
+
+# CMake and Build Folders
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+build/
+dist/
+Debug/
+Release/
+
+# Qt Creator
+*.pro.user
+*.qmake.stash
+*.pro.user.*
+
+# Python Ignored Files
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+.venv/
+env/
+venv/
+.idea/
+.vscode/
+*.log
+*.swp

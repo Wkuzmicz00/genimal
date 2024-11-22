@@ -8,13 +8,15 @@ Check out https://doc.qt.io/qtcreator/creator-quick-ui-forms.html for details on
 */
 import QtQuick
 import QtQuick.Controls
-import GenimalUi
 import QtQuick.Effects
 import QtQuick.Studio.Effects
 import FlowView
 import QtGrpc
 import QtMultimedia
 import QtQuick.Layouts
+
+import qmlFiles
+import "../components"
 
 Rectangle {
     id: rectangle
@@ -32,7 +34,7 @@ Rectangle {
         anchors.rightMargin: 1385
         anchors.topMargin: 591
         anchors.bottomMargin: 55
-        source: "../assets/Wood Spiral (2).png"
+        source: "../assets/images/woodSpiralMagenta.png"
     }
     BorderImage {
         id: borderImage2
@@ -44,19 +46,7 @@ Rectangle {
         anchors.rightMargin: 8
         anchors.topMargin: 591
         anchors.bottomMargin: 55
-        source: "../assets/Wood Spiral (3).png"
-    }
-    gradient: Gradient {
-        GradientStop {
-            position: 0
-            color: "#000000"
-        }
-
-        GradientStop {
-            position: 1
-            color: "#000000"
-        }
-        orientation: Gradient.Horizontal
+        source: "../assets/images/woodSpiralBlue.png"
     }
 
     Text {
@@ -74,7 +64,7 @@ Rectangle {
         anchors.rightMargin: 600
         anchors.topMargin: 8
         anchors.bottomMargin: 336
-        source: "../assets/logo.png"
+        source: "../assets/images/logo.png"
         fillMode: Image.PreserveAspectFit
     }
 
@@ -92,6 +82,18 @@ Rectangle {
         anchors.bottomMargin: 410
         font.pixelSize: 100
         font.styleName: "Semibold"
+    }
+    gradient: Gradient {
+        GradientStop {
+            position: 0
+            color: "#000000"
+        }
+
+        GradientStop {
+            position: 1
+            color: "#000000"
+        }
+        orientation: Gradient.Horizontal
     }
 
     Text {
@@ -260,7 +262,7 @@ Rectangle {
         y: 824
         buttonText: "WYBIERZ FOTKE"
         buttonColor: "#f70287"
-        nextScreen: "Screen_ImageForm.ui.qml"
+        nextScreen: "../views/LoadFileView.ui.qml"
     }
 
     CustomButton {

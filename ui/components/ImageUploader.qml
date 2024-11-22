@@ -1,8 +1,9 @@
 import QtQuick
 import QtQuick.Controls
-import GenimalUi 1.0
 import QtQuick.Dialogs
 import QtQuick.Studio.DesignEffects
+
+import qmlFiles
 
 Item {
     id: imageUploader

@@ -1,26 +1,28 @@
 import QtQuick
-import QtQuick.Controls
-import GenimalUi 1.0
+import QtQuick.Controls 2.15
 
+import qmlFiles
 
 Rectangle {
-    id: backButton
-        width: 50
-        height: 50
+    id: customButton
+        width: 530
+        height: 105
         radius: 10
         color: "black" // Domyślny kolor
         border.color: "gray"
         border.width: 2
-        Image {
-            id: image
-            x: 5
-            y: 5
-            width: 40
-            height: 40
-            source: "../assets/Arrow Curve Left Down (1).png"
-            fillMode: Image.PreserveAspectFit
-        }
 
+        property string buttonText
+        property string buttonColor
+        property string nextScreen: ""
+        // Tekst w przycisku
+        Text {
+            id : _test
+            anchors.centerIn: parent
+            text: buttonText
+            font.pixelSize: 40
+            color: "gray"
+        }
         // Stany przycisku
         states: [
             State {
@@ -28,7 +30,7 @@ Rectangle {
                 when: mouseArea.pressed
                 PropertyChanges {
                     target: customButton
-                    color: "#25a3f9" // Kolor wciśnięcia
+                    color: buttonColor // Kolor wciśnięcia
                 }
             }
         ]
@@ -39,7 +41,7 @@ Rectangle {
                 from: "*"
                 to: "pressed"
                 ColorAnimation {
-                    target: backButton
+                    target: customButton
                     property: "color"
                     duration: 200
                 }
@@ -48,7 +50,7 @@ Rectangle {
                 from: "pressed"
                 to: "*"
                 ColorAnimation {
-                    target: backButton
+                    target: customButton
                     property: "color"
                     duration: 200
                 }
@@ -59,11 +61,9 @@ Rectangle {
         MouseArea {
             id: mouseArea
             anchors.fill: parent
-            anchors.rightMargin: 0
-            onClicked: {
-                stackView.pop()
+            onClicked:
+            {
+                stackView.push(nextScreen)
             }
         }
-
-
 }

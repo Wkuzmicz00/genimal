@@ -2,21 +2,22 @@
 // SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only
 
 import QtQuick
-import GenimalUi
 import QtQuick.VirtualKeyboard
 import QtQuick.Controls 2.15
+
+import qmlFiles
 
 Window {
     width: 1920
     height: 1080
 
     visible: true
-    title: "GenimalUi"
+    title: "GENIMAL"
 
     StackView {
         id: stackView
         anchors.fill: parent
-        initialItem: "Screen01.ui.qml" // Startowy ekran
+        initialItem: "views/MainView.ui.qml" // Startowy ekran
     }
 
 }

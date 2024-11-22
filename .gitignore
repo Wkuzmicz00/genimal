@@ -24,6 +24,24 @@ Data/
 *.core
 *.elf
 
+# QT Design Studio
+*.qtds
+*.qmlc
+*.jsc
+*.cache
+*.moc
+*.obj
+*.o
+*.d
+*.qrc.depends
+Generated/
+*.qm
+*.pro.user
+*.qws
+*.qmlproject.user
+*.qmake.stash
+*.metainfo
+
 # CMake and Build Folders
 CMakeFiles/
 CMakeCache.txt

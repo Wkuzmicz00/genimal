@@ -1,0 +1,4 @@
+module qml.components
+CustomButton CustomButton.qml
+BackButton BackButton.qml
+ImageUploader ImageUploader.qml

@@ -1,0 +1,6 @@
+module Components
+CustomButton CustomButton.qml
+BackButton BackButton.qml
+ImageUploader ImageUploader.qml
+TextHolderContainer TextHolderContainer.qml
+CustomTextHolder CustomTextHolder.qml

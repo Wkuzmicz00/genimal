@@ -7,16 +7,13 @@ this file manually, you might introduce QML code that is not supported by Qt Des
 Check out https://doc.qt.io/qtcreator/creator-quick-ui-forms.html for details on .ui.qml files.
 */
 import QtQuick
-import QtQuick.Controls
+import QtQuick.Controls 2.15
 import QtQuick.Effects
-import QtQuick.Studio.Effects
-import FlowView
-import QtGrpc
 import QtMultimedia
 import QtQuick.Layouts
 
 import qmlFiles
-import "../components"
+import components
 
 Rectangle {
     id: rectangle
@@ -271,5 +268,6 @@ Rectangle {
         y: 824
         buttonText: "WYPISZ CECHY"
         buttonColor: "#25a3f9"
+        nextScreen: "../views/LoadWordsView.ui.qml"
     }
 }

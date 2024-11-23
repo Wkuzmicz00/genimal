@@ -1,7 +1,6 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Dialogs
-import QtQuick.Studio.DesignEffects
 
 import qmlFiles
 
@@ -41,13 +40,6 @@ Item {
         font.pointSize: 8
         text: "WGRAJ FOCIE"
         onClicked: fileDialog.open()
-
-        DesignEffect {
-            effects: [
-                DesignDropShadow {
-                }
-            ]
-        }
     }
 
     // Dialog wyboru pliku

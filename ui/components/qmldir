@@ -4,4 +4,4 @@ BackButton BackButton.qml
 ImageUploader ImageUploader.qml
 TextHolderContainer TextHolderContainer.qml
 CustomTextHolder CustomTextHolder.qml
-
+SplashScreen SplashScreen.qml

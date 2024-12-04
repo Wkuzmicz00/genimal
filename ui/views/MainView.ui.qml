@@ -175,14 +175,14 @@ Rectangle {
 
     Text {
         id: _text1
-        y: 672
+        y: 662
         height: 36
         color: "#eaeaea"
-        text: qsTr("Znajdź swojego zwierzaka bliźniaka ")
+        text: qsTr("FIND YOUR PET TWIN")
         anchors.left: parent.left
         anchors.right: parent.right
-        anchors.leftMargin: 766
-        anchors.rightMargin: 766
+        anchors.leftMargin: 828
+        anchors.rightMargin: 848
         font.pixelSize: 25
     }
 

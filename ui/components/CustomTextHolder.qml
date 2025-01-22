@@ -7,10 +7,10 @@ Rectangle {
     id: textAreaHolder
     x: 0
     y: 0
-    width: 685
-    height: 474
-    color: "#000000"
-    border.color: "gray"
+    width: 575
+    height: 387
+    color: "transparent"
+    border.color: "white"
     border.width: 3
 
     // Ustawienie limitu znaków
@@ -20,10 +20,10 @@ Rectangle {
         id: textArea
         x: 0
         y: 0
-        width: 685
-        height: 474
+        width: 575
+        height: 387
         font.pixelSize: 20
-        placeholderTextColor: "#88707377"
+        placeholderTextColor: "white"
         color: "white"
         placeholderText: "Kliknij, aby wpisać tekst"
         padding: 10

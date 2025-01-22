@@ -17,257 +17,142 @@ import components
 
 Rectangle {
     id: rectangle
-    width: Constants.width
-    height: Constants.height
-    radius: 0
+    width: 1280
+    height: 720
+    radius: 5
     border.color: "#000000"
-    BorderImage {
-        id: borderImage1
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.top: parent.top
-        anchors.bottom: parent.bottom
-        anchors.leftMargin: 8
-        anchors.rightMargin: 1385
-        anchors.topMargin: 591
-        anchors.bottomMargin: 55
-        source: "../assets/images/woodSpiralMagenta.png"
-    }
-    BorderImage {
-        id: borderImage2
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.top: parent.top
-        anchors.bottom: parent.bottom
-        anchors.leftMargin: 1385
-        anchors.rightMargin: 8
-        anchors.topMargin: 591
-        anchors.bottomMargin: 55
-        source: "../assets/images/woodSpiralBlue.png"
-    }
-
-    Text {
-        anchors.centerIn: parent
-        font.family: Constants.font.family
-    }
-
-    Image {
-        id: image
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.top: parent.top
-        anchors.bottom: parent.bottom
-        anchors.leftMargin: 601
-        anchors.rightMargin: 600
-        anchors.topMargin: 8
-        anchors.bottomMargin: 336
-        source: "../assets/images/logo.png"
-        fillMode: Image.PreserveAspectFit
-    }
-
-    Text {
-        id: _text2
-        color: "#ffffff"
-        text: qsTr("N")
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.top: parent.top
-        anchors.bottom: parent.bottom
-        anchors.leftMargin: 840
-        anchors.rightMargin: 982
-        anchors.topMargin: 532
-        anchors.bottomMargin: 410
-        font.pixelSize: 100
-        font.styleName: "Semibold"
-    }
     gradient: Gradient {
         GradientStop {
             position: 0
-            color: "#000000"
+            color: "#d9afd9"
         }
 
         GradientStop {
             position: 1
-            color: "#000000"
+            color: "#97d9e1"
         }
-        orientation: Gradient.Horizontal
+        orientation: Gradient.Vertical
     }
 
-    Text {
-        id: _text3
-        color: "#ffffff"
-        text: qsTr("I")
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.top: parent.top
-        anchors.bottom: parent.bottom
-        anchors.leftMargin: 926
-        anchors.rightMargin: 909
-        anchors.topMargin: 532
-        anchors.bottomMargin: 403
-        font.pixelSize: 100
-        font.styleName: "Semibold"
-    }
 
-    Text {
-        id: _text4
-        color: "#ffffff"
-        text: qsTr("E")
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.top: parent.top
-        anchors.bottom: parent.bottom
-        anchors.leftMargin: 774
-        anchors.rightMargin: 1048
-        anchors.topMargin: 532
-        anchors.bottomMargin: 403
-        font.pixelSize: 100
-        font.styleName: "Semibold"
-    }
-
-    Text {
-        id: _text5
-        color: "#ffffff"
-        text: qsTr("M")
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.top: parent.top
-        anchors.bottom: parent.bottom
-        anchors.leftMargin: 965
-        anchors.rightMargin: 857
-        anchors.topMargin: 532
-        anchors.bottomMargin: 397
-        font.pixelSize: 100
-        font.styleName: "Semibold"
-    }
-
-    Text {
-        id: _text6
-        color: "#ffffff"
-        text: qsTr("A")
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.top: parent.top
-        anchors.bottom: parent.bottom
-        anchors.leftMargin: 1072
-        anchors.rightMargin: 750
-        anchors.topMargin: 532
-        anchors.bottomMargin: 414
-        font.pixelSize: 100
-        font.styleName: "Semibold"
-    }
-
-    Text {
-        id: _text7
-        color: "#ffffff"
-        text: qsTr("L")
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.top: parent.top
-        anchors.bottom: parent.bottom
-        anchors.leftMargin: 1150
-        anchors.rightMargin: 686
-        anchors.topMargin: 532
-        anchors.bottomMargin: 397
-        font.pixelSize: 100
-        font.styleName: "Semibold"
-    }
-
-    Text {
-        id: _text1
-        y: 662
-        height: 36
-        color: "#eaeaea"
-        text: qsTr("FIND YOUR PET TWIN")
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.leftMargin: 828
-        anchors.rightMargin: 848
-        font.pixelSize: 25
-    }
-
-    Item {
-        id: _item2
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.top: parent.top
-        anchors.bottom: parent.bottom
-        anchors.leftMargin: 1258
-        anchors.rightMargin: 69
-        anchors.topMargin: 799
-        anchors.bottomMargin: 127
-    }
-    Text {
-        id: _text8
-        color: "#ffffff"
-        text: qsTr("G")
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.top: parent.top
-        anchors.bottom: parent.bottom
-        anchors.leftMargin: 693
-        anchors.rightMargin: 1129
-        anchors.topMargin: 532
-        anchors.bottomMargin: 403
-        font.pixelSize: 100
-        font.styleName: "Semibold"
-    }
 
     Item {
         id: __materialLibrary__
     }
 
-    Rectangle {
-        id: rectangle1
-        x: 1406
-        y: 35
-        width: 514
-        height: 7
-        color: "grey"
-    }
-
-    Rectangle {
-        id: rectangle2
-        x: 1508
-        y: 54
-        width: 412
-        height: 5
-        color: "grey"
-    }
-
-    Rectangle {
-        id: rectangle3
-        x: 0
-        y: 35
-        width: 514
-        height: 7
-        color: "grey"
-    }
-
-    Rectangle {
-        id: rectangle4
-        x: 0
-        y: 54
-        width: 412
-        height: 5
-        color: "grey"
-    }
-
     CustomButton {
         id: customButton
-        x: 109
-        y: 824
-        buttonText: "WYBIERZ FOTKE"
-        buttonColor: "#f70287"
+        y: 247
+        width: 414
+        height: 76
+        anchors.left: parent.left
+        anchors.leftMargin: 50
+        buttonText: "CHOOSE PHOTO"
+        buttonColor: "#8e2e85"
         nextScreen: "../views/LoadFileView.ui.qml"
+
+
     }
 
     CustomButton {
         id: customButton1
-        x: 1272
-        y: 824
-        buttonText: "WYPISZ CECHY"
-        buttonColor: "#25a3f9"
+        x: 50
+        y: 425
+        width: 414
+        height: 76
+        anchors.right: parent.right
+        anchors.rightMargin: 816
+        buttonText: "YOUR PERSONALITY"
+        buttonColor: "#8e2e85"
         nextScreen: "../views/LoadWordsView.ui.qml"
+    }
+
+
+
+    Image {
+        id: image1
+        x: 475
+        y: 247
+        width: 90
+        height: 80
+        source: "../assets/images/Image.png"
+        fillMode: Image.PreserveAspectFit
+    }
+
+    Image {
+        id: pencil
+        x: 480
+        y: 419
+        width: 81
+        height: 82
+        source: "../assets/images/Pencil.png"
+        fillMode: Image.PreserveAspectFit
+    }
+
+    Image {
+        id: ellipse
+        x: 910
+        y: -32
+        width: 464
+        height: 239
+        source: "../assets/images/Ellipse.png"
+        rotation: 18.017
+        fillMode: Image.PreserveAspectFit
+
+
+        Text {
+            id: _text1
+            x: 148
+            y: 117
+            width: 173
+            height: 18
+            color: "#ffffff"
+            text: qsTr("check what animal is your twin")
+            font.pixelSize: 12
+            rotation: -9.63
+            font.family: "Verdana"
+            font.italic: true
+            font.weight: Font.Medium
+        }
+    }
+
+    Image {
+        id: group5357
+        x: 609
+        y: 191
+        width: 663
+        height: 403
+        source: "../assets/images/Group 457.png"
+        fillMode: Image.PreserveAspectFit
+
+        Image {
+            id: image
+            x: 186
+            y: 58
+            width: 291
+            height: 273
+
+            source: "../assets/images/logo.png"
+            fillMode: Image.PreserveAspectFit
+
+        }
+
+        GenimalText {
+            id: _text
+            x: -582
+            y: -100
+            width: 496
+            height: 104
+        }
+    }
+
+    Image {
+        id: menuSeparator
+        x: -41
+        y: 350
+        width: 724
+        height: 57
+        source: "../assets/images/Menu Separator.png"
+        fillMode: Image.PreserveAspectFit
     }
 }

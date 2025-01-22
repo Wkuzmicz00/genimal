@@ -5,3 +5,5 @@ ImageUploader ImageUploader.qml
 TextHolderContainer TextHolderContainer.qml
 CustomTextHolder CustomTextHolder.qml
 SplashScreen SplashScreen.qml
+GenimalText GenimalText.qml
+ImageButton ImageButton.qml

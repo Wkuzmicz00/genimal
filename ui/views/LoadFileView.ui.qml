@@ -19,24 +19,49 @@ Rectangle {
     id: root
     width: Constants.width
     height: Constants.height
+    radius: 5
+    gradient: Gradient {
+        GradientStop {
+            position: 0
+            color: "#e14fad"
+        }
+
+        GradientStop {
+            position: 1
+            color: "#f9d423"
+        }
+        orientation: Gradient.Vertical
+    }
     color: "#000000"
 
-    BackButton {
-        id: backButton
-        x: 190
-        y: 899
-        color: "#000000"
-    }
 
     ImageUploader {
         anchors.centerIn: parent
-        width: 563
-        height: 771
+        width: 600
+        height: 600
         anchors.left: parent.left
         anchors.top: parent.top
-        anchors.leftMargin: 75
-        anchors.topMargin: 75
-        anchors.verticalCenterOffset: -80
-        anchors.horizontalCenterOffset: -588
+        anchors.leftMargin: 975
+        anchors.topMargin: 269
+        anchors.verticalCenterOffset: -34
+        anchors.horizontalCenterOffset: 312
+    }
+
+    Image {
+        id: rock
+        x: -9
+        y: 10
+        width: 262
+        height: 193
+        source: "../assets/images/Rock.png"
+        rotation: -303.867
+        fillMode: Image.PreserveAspectFit
+
+        BackButton {
+            id: backButton
+            x: 92
+            y: 78
+            rotation: -56.679
+        }
     }
 }

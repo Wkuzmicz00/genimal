@@ -1,26 +1,26 @@
 import QtQuick
-import QtQuick.Controls 2.15
+import QtQuick.Controls
+import QtQuick.Dialogs
 
 import qmlFiles
 
 Rectangle {
-    id: customButton
+    id: imageButton
         width: 530
         height: 105
         radius: 10
-        color: "transparent" // Domyślny kolor
+        color: "transparent"
         border.color: "white"
         border.width: 2
 
         property string buttonText
         property string buttonColor
-        property string nextScreen: ""
-        // Tekst w przycisku
+
         Text {
             id : _test
             anchors.centerIn: parent
             text: buttonText
-            font.pixelSize: 30
+            font.pixelSize: 20
             color: "white"
         }
         // Stany przycisku
@@ -41,7 +41,7 @@ Rectangle {
                 from: "*"
                 to: "pressed"
                 ColorAnimation {
-                    target: customButton
+                    target: imageButton
                     property: "color"
                     duration: 200
                 }
@@ -50,7 +50,7 @@ Rectangle {
                 from: "pressed"
                 to: "*"
                 ColorAnimation {
-                    target: customButton
+                    target: imageButton
                     property: "color"
                     duration: 200
                 }
@@ -63,7 +63,24 @@ Rectangle {
             anchors.fill: parent
             onClicked:
             {
-                stackView.push(nextScreen)
+                fileDialog.open()
+            }
+        }
+
+        FileDialog {
+            id: fileDialog
+            title: "Wybierz zdjęcie"
+            nameFilters: ["Obrazy (*.png *.jpg *.jpeg)"] // Obsługiwane formaty
+            onAccepted: {
+                if (fileDialog.currentFile) {
+                    userImage.source = fileDialog.currentFile // Przypisanie do obrazu
+                } else {
+                    _text1.text = "Nie wybrano pliku"
+                }
+            }
+            onRejected: {
+                console.log("Wybór pliku anulowany")
             }
         }
 }
+

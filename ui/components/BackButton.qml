@@ -9,8 +9,8 @@ Rectangle {
         width: 50
         height: 50
         radius: 10
-        color: "black" // Domyślny kolor
-        border.color: "gray"
+        color: "transparent" // Domyślny kolor
+        border.color: "white"
         border.width: 2
         Image {
             id: image
@@ -18,7 +18,7 @@ Rectangle {
             y: 5
             width: 40
             height: 40
-            source: "../assets/images/backArrow.png"
+            source: "../assets/images/Caret Left.png"
             fillMode: Image.PreserveAspectFit
         }
 

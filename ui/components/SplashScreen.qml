@@ -57,7 +57,7 @@ Window {
         anchors.bottomMargin: 10
         font.weight: Font.ExtraBold
         font.pointSize: 28
-        color: "#000000"
+        color: "#ffffff"
     }
 
     Timer {

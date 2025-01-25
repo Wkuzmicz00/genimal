@@ -23,19 +23,17 @@ Rectangle {
             font.pixelSize: 20
             color: "white"
         }
-        // Stany przycisku
         states: [
             State {
                 name: "pressed"
                 when: mouseArea.pressed
                 PropertyChanges {
                     target: customButton
-                    color: buttonColor // Kolor wciśnięcia
+                    color: buttonColor
                 }
             }
         ]
 
-        // Animacje
         transitions: [
             Transition {
                 from: "*"
@@ -57,7 +55,6 @@ Rectangle {
             }
         ]
 
-        // MouseArea dla interakcji
         MouseArea {
             id: mouseArea
             anchors.fill: parent
@@ -70,10 +67,10 @@ Rectangle {
         FileDialog {
             id: fileDialog
             title: "Wybierz zdjęcie"
-            nameFilters: ["Obrazy (*.png *.jpg *.jpeg)"] // Obsługiwane formaty
+            nameFilters: ["Obrazy (*.png *.jpg *.jpeg)"]
             onAccepted: {
                 if (fileDialog.currentFile) {
-                    userImage.source = fileDialog.currentFile // Przypisanie do obrazu
+                    userImage.source = fileDialog.currentFile
                 } else {
                     _text1.text = "Nie wybrano pliku"
                 }

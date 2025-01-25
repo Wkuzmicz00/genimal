@@ -1,11 +1,3 @@
-
-
-/*
-This is a UI file (.ui.qml) that is intended to be edited in Qt Design Studio only.
-It is supposed to be strictly declarative and only uses a subset of QML. If you edit
-this file manually, you might introduce QML code that is not supported by Qt Design Studio.
-Check out https://doc.qt.io/qtcreator/creator-quick-ui-forms.html for details on .ui.qml files.
-*/
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Effects
@@ -15,13 +7,10 @@ import QtQuick.Layouts
 import qmlFiles
 import components
 
-
 Rectangle {
     id: rectangle
     width: Constants.width
     height: Constants.height
-    color: "#000000"
-    radius: 5
     border.color: "#000000"
     gradient: Gradient {
         GradientStop {
@@ -71,37 +60,81 @@ Rectangle {
         orientation: Gradient.Vertical
     }
 
-    Image {
-        id: rock
-        x: -9
-        y: 10
-        width: 262
-        height: 193
-        source: "../assets/images/Rock.png"
-        rotation: -303.867
-        fillMode: Image.PreserveAspectFit
-
-        BackButton {
-            id: backButton
-            x: 92
-            y: 78
-            rotation: -56.679
-        }
+    BackButton {
+        id: backButton
+        x: 25
+        y: 642
     }
 
     CustomTextHolder {
-        x: 640
-        y: 150
-        width: 575
-        height: 387
+        x: 112
+        y: 88
+        width: 700
+        height: 430
+
+        Image {
+            id: _right
+            x: 639
+            y: 256
+            source: "../assets/images/Right.png"
+            rotation: 98.222
+            fillMode: Image.PreserveAspectFit
+        }
     }
 
-    Image {
-        id: branch
-        x: 830
-        y: 311
-        source: "../assets/images/Branch.png"
-        rotation: -23.654
-        fillMode: Image.PreserveAspectFit
+    CustomButton {
+        id: customButton2
+        x: 518
+        y: 541
+        width: 286
+        height: 50
+        anchors.right: parent.right
+        anchors.rightMargin: 476
+        buttonText: "FIND YOUR TWIN"
+        fontSize: 20
+        buttonColor: "#8e2e85"
+        nextScreen: "../views/ResultView.ui.qml"
     }
+
+        Text {
+            id: _text
+            x: 875
+            y: 88
+            width: 385
+            height: 34
+            color: "#ffffff"
+            text: qsTr("\"Be yourself; everyone else is already taken.\" ")
+            font.pixelSize: 20
+            font.italic: true
+        }
+
+        Image {
+            id: _left
+            x: 69
+            y: 135
+            source: "../assets/images/Left.png"
+            rotation: -105.811
+            fillMode: Image.PreserveAspectFit
+        }
+
+        Image {
+            id: _39
+            x: 923
+            y: 301
+            width: 289
+            height: 217
+            source: "../assets/images/39.png"
+            fillMode: Image.PreserveAspectFit
+        }
+
+        Image {
+            id: group
+            x: 1125
+            y: 148
+            width: 112
+            height: 99
+            source: "../assets/images/Group.png"
+            fillMode: Image.PreserveAspectFit
+        }
 }
+

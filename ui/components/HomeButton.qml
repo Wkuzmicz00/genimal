@@ -18,7 +18,7 @@ Rectangle {
             y: 5
             width: 40
             height: 40
-            source: "../assets/images/Caret Left.png"
+            source: "../assets/images/Home.png"
             fillMode: Image.PreserveAspectFit
         }
 
@@ -59,6 +59,7 @@ Rectangle {
             anchors.fill: parent
             anchors.rightMargin: 0
             onClicked: {
+                stackView.pop()
                 stackView.pop()
             }
         }

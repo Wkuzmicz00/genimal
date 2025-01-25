@@ -1,5 +1,3 @@
-
-
 /*
 This is a UI file (.ui.qml) that is intended to be edited in Qt Design Studio only.
 It is supposed to be strictly declarative and only uses a subset of QML. If you edit
@@ -16,9 +14,10 @@ import qmlFiles
 import components
 
 Rectangle {
-    id: root
+    id: rectangle
     width: Constants.width
     height: Constants.height
+    border.color: "#000000"
     gradient: Gradient {
         GradientStop {
             position: 0
@@ -66,79 +65,55 @@ Rectangle {
         }
         orientation: Gradient.Vertical
     }
-
-
-    ImageUploader {
-        anchors.centerIn: parent
-        width: 620
-        height: 620
-        anchors.left: parent.left
-        anchors.top: parent.top
-        anchors.leftMargin: 482
-        anchors.topMargin: 304
-        anchors.verticalCenterOffset: 1
-        anchors.horizontalCenterOffset: -181
+    Image{
+        id: image
+        x: 236
+        y: 38
+        width: 822
+        height: 644
+        source: "../assets/images/Group 457.png"
+        fillMode: Image.PreserveAspectFit
+        Results {
+            height: 484
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.top: parent.top
+            anchors.leftMargin: 50
+            anchors.rightMargin: 50
+            anchors.topMargin: 15
+        }
     }
-
-    BackButton {
-        id: backButton
-        x: 33
-        y: 630
+    Image {
+        id: cat
+        x: 644
+        y: 594
+        width: 165
+        height: 88
+        source: "../assets/images/Cat.png"
+        fillMode: Image.PreserveAspectFit
+    }
+    HomeButton{
+        x: 25
+        y: 642
     }
 
     Image {
-        id: videoCall
-        x: 814
-        y: 81
-        width: 438
-        height: 440
-        source: "../assets/images/Video Call.png"
+        id: dog
+        x: -39
+        y: 581
+        width: 177
+        height: 64
+        source: "../assets/images/Dog.png"
+        mirror: true
         fillMode: Image.PreserveAspectFit
-
-        Text {
-            id: _text
-            x: 42
-            y: 397
-            width: 218
-            height: 35
-            color: "white"
-            text: qsTr("You look beautiful today")
-            font.pixelSize: 20
-            font.italic: true
-        }
-
-        Image {
-            id: group2
-            x: 266
-            y: 389
-            width: 31
-            height: 36
-            source: "../assets/images/Group (2).png"
-            fillMode: Image.PreserveAspectFit
-        }
-    }
-    CustomButton {
-        id: customButton2
-        x: 894
-        y: 614
-        width: 278
-        height: 47
-        anchors.right: parent.right
-        anchors.rightMargin: 108
-        buttonText: "FIND YOUR TWIN"
-        fontSize: 20
-        buttonColor: "#8e2e85"
-        nextScreen: "../views/ResultView.ui.qml"
     }
 
     Image {
-        id: group3
-        x: 877
-        y: 626
-        width: 30
-        height: 63
-        source: "../assets/images/Group (3).png"
-        rotation: 62.115
+        id: _37
+        x: 184
+        y: 18
+        source: "../assets/images/37.png"
         fillMode: Image.PreserveAspectFit
     }
+
 }

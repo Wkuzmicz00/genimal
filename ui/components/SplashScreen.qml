@@ -1,20 +1,23 @@
 import QtQuick
 import QtQuick.Controls
+import qmlFiles
 
 Window {
     id: splashWindow
-    width: 800
-    height: 600
+    width: Constants.width
+    height: Constants.height
     visible: true
     flags: Qt.FramelessWindowHint | Qt.Window
     color: "transparent"
 
     AnimatedImage {
         id: image
-        x: 0
-        y: 0
-        width: 800
+        y: 33
         height: 600
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.leftMargin: 240
+        anchors.rightMargin: 240
         source: "../assets/images/animation.gif"
         fillMode: Image.PreserveAspectFit
 
@@ -23,11 +26,11 @@ Window {
 
     Rectangle {
         id: progressBarBackground
-        y: 585
+        y: 656
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: parent.bottom
-        anchors.bottomMargin: 5
-        anchors.horizontalCenterOffset: -1
+        anchors.bottomMargin: 54
+        anchors.horizontalCenterOffset: 0
         width: parent.width * 0.6
         height: 10
         color: "#f1f4f7"
@@ -51,10 +54,12 @@ Window {
 
     Text {
         id: loadingText
+        y: 624
         text: "Loading" + dots
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: progressBarBackground.top
-        anchors.bottomMargin: 10
+        anchors.bottomMargin: 22
+        anchors.horizontalCenterOffset: 0
         font.weight: Font.ExtraBold
         font.pointSize: 28
         color: "#ffffff"
@@ -62,7 +67,7 @@ Window {
 
     Timer {
         id: dotTimer
-        interval: 500 // 500 ms for smooth dot animation
+        interval: 500
         repeat: true
         running: true
         onTriggered: {
@@ -76,7 +81,7 @@ Window {
 
     Timer {
         id: progressTimer
-        interval: 50 // Update progress every 50 ms
+        interval: 50
         repeat: true
         running: true
         onTriggered: {
@@ -96,7 +101,6 @@ Window {
     property string dots: ""
 
     onProgressChanged: {
-        // Change colors based on progress
         if (progress < 33) {
             progressColor = "#24a5fb";
         } else if (progress < 66) {

@@ -9,7 +9,7 @@ Rectangle {
         width: 50
         height: 50
         radius: 10
-        color: "transparent" // Domyślny kolor
+        color: "transparent"
         border.color: "white"
         border.width: 2
         Image {
@@ -22,19 +22,17 @@ Rectangle {
             fillMode: Image.PreserveAspectFit
         }
 
-        // Stany przycisku
         states: [
             State {
                 name: "pressed"
                 when: mouseArea.pressed
                 PropertyChanges {
                     target: customButton
-                    color: "#25a3f9" // Kolor wciśnięcia
+                    color: "#25a3f9"
                 }
             }
         ]
 
-        // Animacje
         transitions: [
             Transition {
                 from: "*"
@@ -56,7 +54,6 @@ Rectangle {
             }
         ]
 
-        // MouseArea dla interakcji
         MouseArea {
             id: mouseArea
             anchors.fill: parent

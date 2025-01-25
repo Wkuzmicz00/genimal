@@ -21,38 +21,99 @@ Rectangle {
     gradient: Gradient {
         GradientStop {
             position: 0
-            color: "#d299c2"
+            color: "#3f51b1"
+        }
+
+        GradientStop {
+            position: 0.13
+            color: "#5a55ae"
+        }
+
+        GradientStop {
+            position: 0.25
+            color: "#7b5fac"
+        }
+
+        GradientStop {
+            position: 0.38
+            color: "#8f6aae"
+        }
+
+        GradientStop {
+            position: 0.5
+            color: "#a86aa4"
+        }
+
+        GradientStop {
+            position: 0.62
+            color: "#cc6b8e"
+        }
+
+        GradientStop {
+            position: 0.75
+            color: "#f18271"
+        }
+
+        GradientStop {
+            position: 0.87
+            color: "#f3a469"
         }
 
         GradientStop {
             position: 1
-            color: "#fef9d7"
+            color: "#f7c978"
         }
         orientation: Gradient.Vertical
     }
-
-    Results {
-        width: 750
-        height: 500
-        anchors.left: parent.left
-        anchors.top: parent.top
-        anchors.leftMargin: 484
-        anchors.topMargin: 110
+    Image{
+        id: image
+        x: 236
+        y: 38
+        width: 822
+        height: 644
+        source: "../assets/images/Group 457.png"
+        fillMode: Image.PreserveAspectFit
+        Results {
+            height: 484
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.top: parent.top
+            anchors.leftMargin: 50
+            anchors.rightMargin: 50
+            anchors.topMargin: 15
+        }
+    }
+    Image {
+        id: cat
+        x: 644
+        y: 594
+        width: 165
+        height: 88
+        source: "../assets/images/Cat.png"
+        fillMode: Image.PreserveAspectFit
     }
     HomeButton{
         x: 25
         y: 642
     }
 
-    Text {
-        id: _text
-        x: 484
-        y: 61
-        width: 247
-        height: 43
-        color: "#ffffff"
-        text: qsTr("YOUR TWIN IS:")
-        font.pixelSize: 30
-        font.bold: false
+    Image {
+        id: dog
+        x: -39
+        y: 581
+        width: 177
+        height: 64
+        source: "../assets/images/Dog.png"
+        mirror: true
+        fillMode: Image.PreserveAspectFit
     }
+
+    Image {
+        id: _37
+        x: 184
+        y: 18
+        source: "../assets/images/37.png"
+        fillMode: Image.PreserveAspectFit
+    }
+
 }

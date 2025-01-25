@@ -8,7 +8,7 @@ Rectangle {
         width: 530
         height: 105
         radius: 10
-        color: "transparent" // Domyślny kolor
+        color: "transparent"
         border.color: "white"
         border.width: 3
 
@@ -16,7 +16,6 @@ Rectangle {
         property string buttonColor
         property string nextScreen: ""
         property int fontSize
-        // Tekst w przycisku
         Text {
             id : _test
             anchors.centerIn: parent
@@ -24,19 +23,17 @@ Rectangle {
             font.pixelSize: fontSize
             color: "white"
         }
-        // Stany przycisku
         states: [
             State {
                 name: "pressed"
                 when: mouseArea.pressed
                 PropertyChanges {
                     target: customButton
-                    color: buttonColor // Kolor wciśnięcia
+                    color: buttonColor
                 }
             }
         ]
 
-        // Animacje
         transitions: [
             Transition {
                 from: "*"
@@ -58,7 +55,6 @@ Rectangle {
             }
         ]
 
-        // MouseArea dla interakcji
         MouseArea {
             id: mouseArea
             anchors.fill: parent

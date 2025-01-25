@@ -82,15 +82,6 @@ Rectangle {
         }
     }
 
-    Image {
-        id: branch
-        x: 834
-        y: 233
-        source: "../assets/images/Branch.png"
-        rotation: -20.23
-        fillMode: Image.PreserveAspectFit
-    }
-
     CustomButton {
         id: customButton2
         x: 518
@@ -105,12 +96,10 @@ Rectangle {
         nextScreen: "../views/ResultView.ui.qml"
     }
 
-    // Decorative shapes
-
         Text {
             id: _text
-            x: 842
-            y: 286
+            x: 875
+            y: 88
             width: 385
             height: 34
             color: "#ffffff"
@@ -125,6 +114,26 @@ Rectangle {
             y: 135
             source: "../assets/images/Left.png"
             rotation: -105.811
+            fillMode: Image.PreserveAspectFit
+        }
+
+        Image {
+            id: _39
+            x: 923
+            y: 301
+            width: 289
+            height: 217
+            source: "../assets/images/39.png"
+            fillMode: Image.PreserveAspectFit
+        }
+
+        Image {
+            id: group
+            x: 1125
+            y: 148
+            width: 112
+            height: 99
+            source: "../assets/images/Group.png"
             fillMode: Image.PreserveAspectFit
         }
 }

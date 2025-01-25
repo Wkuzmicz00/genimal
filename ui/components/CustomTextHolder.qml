@@ -3,53 +3,54 @@ import QtQuick.Controls 2.15
 
 import qmlFiles
 
-Rectangle {
-    id: textAreaHolder
-    x: 0
-    y: 0
+Item{
     width: 700
     height: 430
-    color: "transparent"
-    border.color: "white"
-    border.width: 3
-    radius: 10
+    id: textAreaHolder
 
-    // Ustawienie limitu znaków
-    property int charLimit: 600  // Limit znaków, np. 100 znaków
-
-    TextArea {
-        id: textArea
+    Rectangle {
+        id: rectangle
+        anchors.fill: parent
         x: 0
         y: 0
-        width: 700
-        height: 430
-        font.pixelSize: 20
-        placeholderTextColor: "white"
-        color: "white"
-        placeholderText: "DESCRIBE YOURSELF"
-        padding: 10
+        color: "transparent"
+        border.color: "white"
+        border.width: 3
+        radius: 10
 
-        wrapMode: TextArea.Wrap
+        property int charLimit: 10
 
-        // Monitorowanie zmian tekstu
-        onTextChanged: {
-            // Sprawdzamy, czy liczba znaków przekroczyła limit
-            if (text.length > charLimit) {
-                // Jeśli liczba znaków przekroczyła limit, obcinamy tekst
-                text = text.slice(0, charLimit);  // Ograniczamy tekst do limitu znaków
-            }
-        }
+        TextArea {
+            id: textArea
+            width: 700
+            height: 430
+            font.pixelSize: 20
+            placeholderTextColor: "white"
+            color: "white"
+            placeholderText: "DESCRIBE YOURSELF"
+            padding: 10
+            wrapMode: TextArea.Wrap
 
-        Keys.onPressed: {
-            // Jeśli liczba znaków przekroczyła limit, blokujemy dalsze pisanie
-            if (text.length >= charLimit) {
-                // Pozwalamy na usuwanie tekstu (Backspace i Delete)
-                if (event.key === Qt.Key_Backspace || event.key === Qt.Key_Delete) {
-                    event.accepted = false; // Akceptujemy usuwanie tekstu
+            onTextChanged: {
+                if (text.length > rectangle.charLimit) {
+                    text = text.slice(0, rectangle.charLimit);
                 }
-                // Zatrzymujemy wprowadzanie nowych znaków (spacji i Enter)
-                else if (event.key === Qt.Key_Space || event.key === Qt.Key_Return || event.text.length > 0) {
-                    event.accepted = true; // Zatrzymujemy dalsze pisanie nowych znaków
+            }
+
+            Keys.onPressed: {
+                if (event.key === Qt.Key_Return || event.key === Qt.Key_Enter || event.key === Qt.Key_Tab) {
+                        event.accepted = true;
+                }
+                if (text.length >= charLimit) {
+                                    // Allow only Backspace and Delete
+                    if (event.key === Qt.Key_Backspace || event.key === Qt.Key_Delete) {
+                        event.accepted = true;
+                    } else {
+                        event.accepted = false;  // Block all other keys
+                    }
+                    } else {
+                        // Allow normal input when below charLimit
+                        event.accepted = true;
                 }
             }
         }

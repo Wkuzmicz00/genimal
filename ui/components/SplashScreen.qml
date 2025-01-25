@@ -67,7 +67,7 @@ Window {
 
     Timer {
         id: dotTimer
-        interval: 500 // 500 ms for smooth dot animation
+        interval: 500
         repeat: true
         running: true
         onTriggered: {
@@ -81,7 +81,7 @@ Window {
 
     Timer {
         id: progressTimer
-        interval: 50 // Update progress every 50 ms
+        interval: 50
         repeat: true
         running: true
         onTriggered: {
@@ -101,7 +101,6 @@ Window {
     property string dots: ""
 
     onProgressChanged: {
-        // Change colors based on progress
         if (progress < 33) {
             progressColor = "#24a5fb";
         } else if (progress < 66) {

@@ -13,7 +13,7 @@ Window {
     maximumHeight: Constants.height
     title: "GENIMAL"
     color: "transparent"
-    flags: Qt.FramelessWindowHint | Qt.WindowMinMaxButtonsHint
+    flags: Qt.FramelessWindowHint
     minimumWidth: Constants.width
     minimumHeight: Constants.height
 
@@ -23,50 +23,55 @@ Window {
 
         Timer {
             id: splashTimer
-            interval: 5000 // 5 sekund
+            interval: 4750
             running: true
             repeat: false
             onTriggered: {
-                fadeOutAnimation.start() // Uruchomienie animacji zanikania
+                fadeOutAnimation.start()
             }
         }
-
-        // Animacja zanikania SplashScreen
-        SequentialAnimation {
+        PropertyAnimation {
             id: fadeOutAnimation
+            target: splashScreen
+            property: "opacity"
+            from: 1.0
+            to: 0.0
+            duration: 1000
+            onStopped: {
+                splashScreen.visible = false // Ukryj ekran powitalny
+                stackView.visible = true // Pokaż StackView
+                bounceAnimation.start() // Rozpocznij animację "bounce"
+                }
+            }
+    }
+    StackView {
+        id: stackView
+        visible: false
+        opacity: 0.0
+        anchors.fill: parent
+        initialItem: "views/MainView.ui.qml"
+        SequentialAnimation {
+            id: bounceAnimation
             PropertyAnimation {
-                target: splashScreen
+                target: stackView
+                property: "y"
+                from: -mainWindow.height // Przesuń z góry
+                to: 0
+                duration: 500
+                easing.type: Easing.OutBounce
+            }
+            PropertyAnimation {
+                target: stackView
                 property: "opacity"
-                from: 1.0
-                to: 0.0
+                from: 0.0
+                to: 1.0
                 duration: 500
             }
             ScriptAction {
                 script: {
-                    splashScreen.visible = false // Ukryj SplashScreen po animacji
-                    stackView.visible = true    // Pokaż StackView
-                    fadeInAnimation.start()    // Rozpocznij animację StackView
-                    mainWindow.flags = Qt.Window // Przywróć ramkę okna
+                mainWindow.flags = Qt.Window
                 }
             }
-        }
-    }
-
-    StackView {
-        id: stackView
-        visible: false
-        opacity: 0.0 // Ukryj widok na początku
-        anchors.fill: parent
-        initialItem: "views/MainView.ui.qml" // Startowy ekran
-
-        // Animacja pojawiania się StackView
-        PropertyAnimation {
-            id: fadeInAnimation
-            target: stackView
-            property: "opacity"
-            from: 0.0
-            to: 1.0
-            duration: 1000 // 1 sekunda
         }
     }
 }

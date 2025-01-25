@@ -3,12 +3,56 @@ import QtQuick.Controls
 
 Rectangle {
     id: root
-    width: 750
-    height: 500
-    color: "transparent"
-    border.color: "white"
-    border.width: 3
-    radius: 10
+    width: 722
+    height: 484
+    color: "#b53f51b1"
+    gradient: Gradient {
+        GradientStop {
+            position: 0
+            color: "#d23f51b1"
+        }
+
+        GradientStop {
+            position: 0.13
+            color: "#cf5a55ae"
+        }
+
+        GradientStop {
+            position: 0.25
+            color: "#cd7b5fac"
+        }
+
+        GradientStop {
+            position: 0.38
+            color: "#cf8f6aae"
+        }
+
+        GradientStop {
+            position: 0.5
+            color: "#c7a86aa4"
+        }
+
+        GradientStop {
+            position: 0.62
+            color: "#c4cc6b8e"
+        }
+
+        GradientStop {
+            position: 0.75
+            color: "#c7f18271"
+        }
+
+        GradientStop {
+            position: 0.87
+            color: "#c7f3a469"
+        }
+
+        GradientStop {
+            position: 1
+            color: "#c9f7c978"
+        }
+        orientation: Gradient.Vertical
+    }
 
     property string jsonString
     property var jsonArray: []
@@ -61,12 +105,13 @@ Rectangle {
     }
 
     Image {
-        width: 382
         source: jsonArray[0].image_path
         height: 309
         anchors.left: parent.left
+        anchors.right: parent.right
         anchors.top: parent.top
-        anchors.leftMargin: 25
+        anchors.leftMargin: 155
+        anchors.rightMargin: 155
         anchors.topMargin: 8
         fillMode: Image.PreserveAspectFit
         opacity: dataLoaded && progressCompleted ? 1 : 0
@@ -80,16 +125,16 @@ Rectangle {
     }
 
     Text {
-        x: 89
+        x: 234
         width: 254
         height: 34
-        text: jsonArray[0].name
+        text: "1. " + jsonArray[0].name
         anchors.top: parent.top
-        anchors.topMargin: 315
+        anchors.topMargin: 317
         font.pixelSize: 25
         horizontalAlignment: Text.AlignHCenter
         font.bold: true
-        color: "black"
+        color: "white"
         opacity: dataLoaded && progressCompleted ? 1 : 0
         visible: dataLoaded && progressCompleted
         Behavior on opacity {
@@ -100,16 +145,16 @@ Rectangle {
         }
     }
     Text {
-        x: 8
+        x: 135
         width: 182
         height: 34
         text: "Similarity:"
         anchors.top: parent.top
-        anchors.topMargin: 358
+        anchors.topMargin: 360
         font.pixelSize: 25
         horizontalAlignment: Text.AlignHCenter
-        font.bold: true
-        color: "black"
+        font.bold: false
+        color: "white"
         opacity: dataLoaded && progressCompleted ? 1 : 0
         visible: dataLoaded && progressCompleted
         Behavior on opacity {
@@ -121,16 +166,16 @@ Rectangle {
     }
 
     Text {
-        x: 181
+        x: 333
         width: 80
         height: 40
         text: Math.round(animatedPercent) + "%"
         anchors.top: parent.top
-        anchors.topMargin: 355
+        anchors.topMargin: 360
         font.pixelSize: 25
         horizontalAlignment: Text.AlignHCenter
         font.bold: true
-        color: "black"
+        color: "white"
         opacity: dataLoaded && progressCompleted ? 1 : 0
         visible: dataLoaded && progressCompleted
         Behavior on opacity {
@@ -180,18 +225,37 @@ Rectangle {
             percentCompleted = true;
         }
     }
-
     Text {
-        x: 476
+            x: 513
+            width: 254
+            height: 34
+            text: "2. " + jsonArray[1].name + " " + jsonArray[1].percent + "%"
+            anchors.top: parent.top
+            anchors.topMargin: 363
+            font.pixelSize: 15
+            horizontalAlignment: Text.AlignHCenter
+            font.bold: false
+            color: "white"
+            opacity: dataLoaded && percentCompleted ? 1 : 1
+            visible: dataLoaded && percentCompleted
+            Behavior on opacity {
+                NumberAnimation {
+                    duration: 800
+                    easing.type: Easing.InOutQuad
+                }
+            }
+        }
+    Text {
+        x: 513
         width: 254
         height: 34
-        text: jsonArray[1].name + " " + jsonArray[1].percent + "%"
-        anchors.top: parent.top
-        anchors.topMargin: 80
-        font.pixelSize: 25
+        font.pixelSize: 15
         horizontalAlignment: Text.AlignHCenter
-        font.bold: true
-        color: "black"
+        font.bold: false
+        color: "white"
+        text: "3. " +jsonArray[2].name + " " + jsonArray[2].percent + "%"
+        anchors.top: parent.top
+        anchors.topMargin: 393
         opacity: dataLoaded && percentCompleted ? 1 : 1
         visible: dataLoaded && percentCompleted
         Behavior on opacity {
@@ -202,16 +266,16 @@ Rectangle {
         }
     }
     Text {
-        x: 476
+        x: 513
         width: 254
         height: 34
-        font.pixelSize: 25
-        horizontalAlignment: Text.AlignHCenter
-        font.bold: true
-        color: "black"
-        text: jsonArray[2].name + " " + jsonArray[2].percent + "%"
+        text: "4. " + jsonArray[3].name + " " + jsonArray[3].percent + "%"
         anchors.top: parent.top
-        anchors.topMargin: 160
+        anchors.topMargin: 423
+        font.pixelSize: 15
+        horizontalAlignment: Text.AlignHCenter
+        font.bold: false
+        color: "white"
         opacity: dataLoaded && percentCompleted ? 1 : 1
         visible: dataLoaded && percentCompleted
         Behavior on opacity {
@@ -222,36 +286,16 @@ Rectangle {
         }
     }
     Text {
-        x: 476
+        x: 513
         width: 254
         height: 34
-        text: jsonArray[3].name + " " + jsonArray[3].percent + "%"
+        text: "5. " + jsonArray[4].name + " " + jsonArray[4].percent + "%"
         anchors.top: parent.top
-        anchors.topMargin: 240
-        font.pixelSize: 25
+        anchors.topMargin: 453
+        font.pixelSize: 15
         horizontalAlignment: Text.AlignHCenter
-        font.bold: true
-        color: "black"
-        opacity: dataLoaded && percentCompleted ? 1 : 1
-        visible: dataLoaded && percentCompleted
-        Behavior on opacity {
-            NumberAnimation {
-                duration: 800
-                easing.type: Easing.InOutQuad
-            }
-        }
-    }
-    Text {
-        x: 476
-        width: 254
-        height: 34
-        text: jsonArray[4].name + " " + jsonArray[4].percent + "%"
-        anchors.top: parent.top
-        anchors.topMargin: 320
-        font.pixelSize: 25
-        horizontalAlignment: Text.AlignHCenter
-        font.bold: true
-        color: "black"
+        font.bold: false
+        color: "white"
         opacity: dataLoaded && percentCompleted ? 1 : 1
         visible: dataLoaded && percentCompleted
         Behavior on opacity {
@@ -263,11 +307,15 @@ Rectangle {
     }
     Rectangle {
         id: loadingOverlay
+        x: 0
+        y: 0
         width: parent.width
         height: parent.height
-        color: "transparent"
+        color: "black"
         visible: !loadingComplete
         z: 10
+
+
 
         Column {
             anchors.centerIn: parent
@@ -286,11 +334,12 @@ Rectangle {
                     id: progress
                     x: 3
                     width: 0
-                    height: 13
-                    color: "#a0a86aa4"
+                    color: "#b6df89b5"
                     radius: 10
-                    anchors.verticalCenter: parent.verticalCenter
-                    anchors.verticalCenterOffset: 1
+                    anchors.top: parent.top
+                    anchors.bottom: parent.bottom
+                    anchors.topMargin: 3
+                    anchors.bottomMargin: 3
 
                     Behavior on width {
                         NumberAnimation {
@@ -316,5 +365,102 @@ Rectangle {
                 }
             }
         }
+
+        Text {
+            id: _text1
+            x: 221
+            y: 200
+            width: 65
+            height: 26
+            color: "#ffffff"
+            text: "mmm..."
+            font.pixelSize: 20
+            font.styleName: "Semilight Italic"
+            font.bold: true
+            opacity: progress.width >= 1 ? 1 : 0
+            Behavior on opacity {
+                NumberAnimation {
+                    duration: 300
+                }
+            }
+
+        }
+        Text {
+            id: _text2
+            x: 292
+            y: 200
+            width: 65
+            height: 26
+            color: "#ffffff"
+            text: "I see..."
+            font.pixelSize: 20
+            font.styleName: "Semilight Italic"
+            font.bold: true
+            opacity: progress.width >= 100 ? 1 : 0
+            Behavior on opacity {
+                NumberAnimation {
+                    duration: 300
+                }
+            }
+        }
+        Text {
+            id: _text3
+            x: 355
+            y: 200
+            width: 71
+            height: 26
+            color: "#ffffff"
+            text: "you are..."
+            font.pixelSize: 20
+            font.styleName: "Semilight Italic"
+            font.bold: true
+            opacity: progress.width >= 200 ? 1 : 0
+            Behavior on opacity {
+                NumberAnimation {
+                    duration: 300
+                }
+            }
+        }
+
     }
+    Image {
+        id: group4
+        x: 439
+        y: 381
+        width: 74
+        height: 111
+        source: "../assets/images/Group (4).png"
+        rotation: 74.738
+        fillMode: Image.PreserveAspectFit
+        opacity: dataLoaded && percentCompleted ? 1 : 1
+        visible: dataLoaded && percentCompleted
+        Behavior on opacity {
+            NumberAnimation {
+                duration: 800
+                easing.type: Easing.InOutQuad
+            }
+        }
+    }
+    Text {
+        x: 408
+        y: 420
+        width: 162
+        height: 28
+        text: "Check the other"
+        font.pixelSize: 10
+        horizontalAlignment: Text.AlignHCenter
+        rotation: -5.718
+        font.italic: true
+        font.bold: false
+        color: "white"
+        opacity: dataLoaded && percentCompleted ? 1 : 1
+        visible: dataLoaded && percentCompleted
+        Behavior on opacity {
+            NumberAnimation {
+                duration: 800
+                easing.type: Easing.InOutQuad
+            }
+        }
+    }
+
 }

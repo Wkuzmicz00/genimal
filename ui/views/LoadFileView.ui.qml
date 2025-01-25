@@ -22,16 +22,50 @@ Rectangle {
     gradient: Gradient {
         GradientStop {
             position: 0
-            color: "#e14fad"
+            color: "#3f51b1"
+        }
+
+        GradientStop {
+            position: 0.13
+            color: "#5a55ae"
+        }
+
+        GradientStop {
+            position: 0.25
+            color: "#7b5fac"
+        }
+
+        GradientStop {
+            position: 0.38
+            color: "#8f6aae"
+        }
+
+        GradientStop {
+            position: 0.5
+            color: "#a86aa4"
+        }
+
+        GradientStop {
+            position: 0.62
+            color: "#cc6b8e"
+        }
+
+        GradientStop {
+            position: 0.75
+            color: "#f18271"
+        }
+
+        GradientStop {
+            position: 0.87
+            color: "#f3a469"
         }
 
         GradientStop {
             position: 1
-            color: "#f9d423"
+            color: "#f7c978"
         }
         orientation: Gradient.Vertical
     }
-    color: "#000000"
 
 
     ImageUploader {
@@ -54,8 +88,8 @@ Rectangle {
 
     Image {
         id: videoCall
-        x: 819
-        y: 65
+        x: 814
+        y: 81
         width: 438
         height: 440
         source: "../assets/images/Video Call.png"
@@ -63,8 +97,8 @@ Rectangle {
 
         Text {
             id: _text
-            x: 104
-            y: 352
+            x: 42
+            y: 397
             width: 218
             height: 35
             color: "white"
@@ -72,18 +106,39 @@ Rectangle {
             font.pixelSize: 20
             font.italic: true
         }
+
+        Image {
+            id: group2
+            x: 266
+            y: 389
+            width: 31
+            height: 36
+            source: "../assets/images/Group (2).png"
+            fillMode: Image.PreserveAspectFit
+        }
     }
     CustomButton {
         id: customButton2
-        x: 895
-        y: 610
-        width: 286
-        height: 50
+        x: 894
+        y: 614
+        width: 278
+        height: 47
         anchors.right: parent.right
-        anchors.rightMargin: 99
+        anchors.rightMargin: 108
         buttonText: "FIND YOUR TWIN"
         fontSize: 20
         buttonColor: "#8e2e85"
         nextScreen: "../views/ResultView.ui.qml"
+    }
+
+    Image {
+        id: group3
+        x: 877
+        y: 626
+        width: 30
+        height: 63
+        source: "../assets/images/Group (3).png"
+        rotation: 62.115
+        fillMode: Image.PreserveAspectFit
     }
 }

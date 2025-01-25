@@ -19,7 +19,6 @@ Rectangle {
     id: root
     width: Constants.width
     height: Constants.height
-    radius: 5
     gradient: Gradient {
         GradientStop {
             position: 0
@@ -37,31 +36,54 @@ Rectangle {
 
     ImageUploader {
         anchors.centerIn: parent
-        width: 600
-        height: 600
+        width: 620
+        height: 620
         anchors.left: parent.left
         anchors.top: parent.top
-        anchors.leftMargin: 975
-        anchors.topMargin: 269
-        anchors.verticalCenterOffset: -34
-        anchors.horizontalCenterOffset: 312
+        anchors.leftMargin: 482
+        anchors.topMargin: 304
+        anchors.verticalCenterOffset: 1
+        anchors.horizontalCenterOffset: -181
+    }
+
+    BackButton {
+        id: backButton
+        x: 33
+        y: 630
     }
 
     Image {
-        id: rock
-        x: -9
-        y: 10
-        width: 262
-        height: 193
-        source: "../assets/images/Rock.png"
-        rotation: -303.867
+        id: videoCall
+        x: 819
+        y: 65
+        width: 438
+        height: 440
+        source: "../assets/images/Video Call.png"
         fillMode: Image.PreserveAspectFit
 
-        BackButton {
-            id: backButton
-            x: 92
-            y: 78
-            rotation: -56.679
+        Text {
+            id: _text
+            x: 104
+            y: 352
+            width: 218
+            height: 35
+            color: "white"
+            text: qsTr("You look beautiful today")
+            font.pixelSize: 20
+            font.italic: true
         }
+    }
+    CustomButton {
+        id: customButton2
+        x: 895
+        y: 610
+        width: 286
+        height: 50
+        anchors.right: parent.right
+        anchors.rightMargin: 99
+        buttonText: "FIND YOUR TWIN"
+        fontSize: 20
+        buttonColor: "#8e2e85"
+        nextScreen: "../views/ResultView.ui.qml"
     }
 }

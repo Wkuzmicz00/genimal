@@ -7,25 +7,26 @@ Rectangle {
     id: textAreaHolder
     x: 0
     y: 0
-    width: 575
-    height: 387
+    width: 700
+    height: 430
     color: "transparent"
     border.color: "white"
     border.width: 3
+    radius: 10
 
     // Ustawienie limitu znaków
-    property int charLimit: 200  // Limit znaków, np. 100 znaków
+    property int charLimit: 600  // Limit znaków, np. 100 znaków
 
     TextArea {
         id: textArea
         x: 0
         y: 0
-        width: 575
-        height: 387
+        width: 700
+        height: 430
         font.pixelSize: 20
         placeholderTextColor: "white"
         color: "white"
-        placeholderText: "Kliknij, aby wpisać tekst"
+        placeholderText: "DESCRIBE YOURSELF"
         padding: 10
 
         wrapMode: TextArea.Wrap

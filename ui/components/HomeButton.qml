@@ -1,29 +1,27 @@
 import QtQuick
-import QtQuick.Controls 2.15
+import QtQuick.Controls
 
 import qmlFiles
 
+
 Rectangle {
-    id: customButton
-        width: 530
-        height: 105
+    id: backButton
+        width: 50
+        height: 50
         radius: 10
         color: "transparent" // Domyślny kolor
         border.color: "white"
-        border.width: 3
-
-        property string buttonText
-        property string buttonColor
-        property string nextScreen: ""
-        property int fontSize
-        // Tekst w przycisku
-        Text {
-            id : _test
-            anchors.centerIn: parent
-            text: buttonText
-            font.pixelSize: fontSize
-            color: "white"
+        border.width: 2
+        Image {
+            id: image
+            x: 5
+            y: 5
+            width: 40
+            height: 40
+            source: "../assets/images/Home.png"
+            fillMode: Image.PreserveAspectFit
         }
+
         // Stany przycisku
         states: [
             State {
@@ -31,7 +29,7 @@ Rectangle {
                 when: mouseArea.pressed
                 PropertyChanges {
                     target: customButton
-                    color: buttonColor // Kolor wciśnięcia
+                    color: "#25a3f9" // Kolor wciśnięcia
                 }
             }
         ]
@@ -42,7 +40,7 @@ Rectangle {
                 from: "*"
                 to: "pressed"
                 ColorAnimation {
-                    target: customButton
+                    target: backButton
                     property: "color"
                     duration: 200
                 }
@@ -51,7 +49,7 @@ Rectangle {
                 from: "pressed"
                 to: "*"
                 ColorAnimation {
-                    target: customButton
+                    target: backButton
                     property: "color"
                     duration: 200
                 }
@@ -62,9 +60,12 @@ Rectangle {
         MouseArea {
             id: mouseArea
             anchors.fill: parent
-            onClicked:
-            {
-                stackView.push(nextScreen)
+            anchors.rightMargin: 0
+            onClicked: {
+                stackView.pop()
+                stackView.pop()
             }
         }
+
+
 }

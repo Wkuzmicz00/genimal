@@ -1,6 +1,5 @@
 import QtQuick
 import QtQuick.Controls
-import QtQuick.Studio.DesignEffects
 
 Rectangle {
     id: rectangle
@@ -18,12 +17,7 @@ Rectangle {
         font.wordSpacing: 0.7
         font.bold: true
         anchors.centerIn: parent
-
-        DesignEffect {
-            effects: [
-                DesignDropShadow {
-                }
-            ]
-        }
     }
+
+
 }

@@ -9,13 +9,13 @@ import qmlFiles
 Window {
     id: mainWindow
     visible: true
-    maximumWidth: 1280
-    maximumHeight: 720
+    maximumWidth: Constants.width
+    maximumHeight: Constants.height
     title: "GENIMAL"
     color: "transparent"
     flags: Qt.FramelessWindowHint | Qt.WindowMinMaxButtonsHint
-    minimumWidth: 1280
-    minimumHeight: 720
+    minimumWidth: Constants.width
+    minimumHeight: Constants.height
 
     SplashScreen {
         id: splashScreen

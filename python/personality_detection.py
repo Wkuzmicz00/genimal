@@ -31,7 +31,7 @@ class personalty_detector():
 
     def _add_image_path(self, data):
         for i in range(len(data)):
-            data[i]['image_path'] = f"./assets/animal_images/{data[i]['name'].lower()}.png"
+            data[i]['image_path'] = f"./../assets/animal_images/{data[i]['name'].lower()}.png"
 
         return data
 

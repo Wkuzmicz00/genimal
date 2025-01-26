@@ -67,6 +67,7 @@ Rectangle {
     }
 
     CustomTextHolder {
+        id: textHolder
         x: 112
         y: 88
         width: 700
@@ -79,6 +80,19 @@ Rectangle {
             source: "../assets/images/Right.png"
             rotation: 98.222
             fillMode: Image.PreserveAspectFit
+        }
+    }
+
+    Button {
+        id: customButton1
+        x: 400
+        y: 541
+        width: 286
+        height: 50
+        onClicked: 
+        {
+            stackView.push("../views/ResultView.ui.qml")
+            controller.process_text(textHolder.text)
         }
     }
 

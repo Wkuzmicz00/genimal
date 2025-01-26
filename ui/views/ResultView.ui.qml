@@ -115,5 +115,4 @@ Rectangle {
         source: "../assets/images/37.png"
         fillMode: Image.PreserveAspectFit
     }
-
 }

@@ -7,6 +7,7 @@ Item{
     width: 700
     height: 430
     id: textAreaHolder
+    property string text: "test"
 
     Rectangle {
         id: rectangle
@@ -17,8 +18,7 @@ Item{
         border.color: "white"
         border.width: 3
         radius: 10
-
-        property int charLimit: 10
+        property int charLimit: 1200
 
         TextArea {
             id: textArea
@@ -35,6 +35,7 @@ Item{
                 if (text.length > rectangle.charLimit) {
                     text = text.slice(0, rectangle.charLimit);
                 }
+                textAreaHolder.text = text
             }
 
             Keys.onPressed: {
@@ -42,14 +43,12 @@ Item{
                         event.accepted = true;
                 }
                 if (text.length >= charLimit) {
-                                    // Allow only Backspace and Delete
                     if (event.key === Qt.Key_Backspace || event.key === Qt.Key_Delete) {
                         event.accepted = true;
                     } else {
                         event.accepted = false;  // Block all other keys
                     }
                     } else {
-                        // Allow normal input when below charLimit
                         event.accepted = true;
                 }
             }

@@ -11,7 +11,6 @@ class personalty_detector():
 
     def check_personality(self, user_text):
         result_json = self._calculate_distances(user_text)
-        print(result_json)
         result_json = self._calculate_percent(result_json)
         result_json = self._add_image_path(result_json)
 
@@ -32,7 +31,7 @@ class personalty_detector():
 
     def _add_image_path(self, data):
         for i in range(len(data)):
-            data[i]['image_path'] = f"assets/animal_images/{data[i]['name']}.jpg"
+            data[i]['image_path'] = f"./assets/animal_images/{data[i]['name'].lower()}.png"
 
         return data
 
@@ -40,7 +39,7 @@ class personalty_detector():
         max_distance = max(item["distance"] for item in data)
 
         for item in data:
-            item["percent"] = round(((max_distance - item["distance"]) / max_distance) * 100, 2)
+            item["percent"] = str(round(((max_distance - item["distance"]) / max_distance) * 100, 2))
             del item["distance"]
 
         return data
@@ -52,7 +51,7 @@ class personalty_detector():
         inputs = tokenizer(text, truncation=True, padding=True, return_tensors="pt")
         outputs = model(**inputs)
         predictions = outputs.logits.squeeze().detach().numpy()
-
+        print(predictions)
         sigmoid = nn.Sigmoid()
         predictions = sigmoid(outputs.logits.squeeze()).detach().numpy()
         print(predictions)
@@ -76,22 +75,8 @@ class personalty_detector():
         scaler = MinMaxScaler(feature_range=(0, 1))
         scaler.fit(big_five_data)
         big_five_data = scaler.transform(big_five_data)
-        print(big_five_data)
 
         return (big_five_labels, big_five_data)
-    
 
-#import json
-#test = [{ "name": "monkey", "image_path": "assets/animal_images/monkey.jpg", "percent": "85.5"},
-        #{ "name": "monkey", "image_path": "assets/animal_images/monkey.jpg", "percent": "85.5"}]
-        
-
-
-#json_string = json.dumps(test, indent=4)
-#print(json_string)
-
-x = personalty_detector()
-test = "xd"
-print(x.check_personality(test))
 
 

@@ -64,45 +64,18 @@ Rectangle {
     property real speedFactor: 1
     property bool percentCompleted: false
 
-    function loadJsonToArray() {
-        jsonString = '[ \
-            { \
-                "name": "MONKEY", \
-                "image_path": "../assets/animal_images/monkey.png", \
-                "percent": "85.5" \
-            }, \
-            { \
-                "name": "DOG", \
-                "image_path": "../assets/animal_images/dog.png", \
-                "percent": "80" \
-            }, \
-            { \
-                "name": "ELEPHANT", \
-                "image_path": "../assets/animal_images/elephant.png", \
-                "percent": "75.2" \
-            }, \
-            { \
-                "name": "CAT OLGA", \
-                "image_path": "../assets/animal_images/cat.png", \
-                "percent": "69" \
-            }, \
-            { \
-                "name": "SNAKE", \
-                "image_path": "../assets/animal_images/snake.png", \
-                "percent": "9.7" \
-            } \
-        ]';
+    function loadJsonToArray(jsonString) {
         jsonArray = JSON.parse(jsonString);
         totalPercent = parseFloat(jsonArray[0].percent);
         dataLoaded = true;
     }
 
-    Timer {
-        interval: 1000
-        running: true
-        repeat: false
-        onTriggered: loadJsonToArray()
-    }
+    //Timer {
+    //    interval: 1000
+    //    running: true
+    //    repeat: false
+    //    onTriggered: loadJsonToArray()
+    //}
 
     Image {
         source: jsonArray[0].image_path
@@ -361,7 +334,6 @@ Rectangle {
                     loadingOverlay.visible = false;
                     loadingComplete = true;
                     progressCompleted = true;
-                    loadJsonToArray();
                 }
             }
         }
@@ -462,5 +434,10 @@ Rectangle {
             }
         }
     }
-
+    Connections {
+        target: controller
+        function onResultReady(result)  {
+            loadJsonToArray(result)
+        }
+    }
 }

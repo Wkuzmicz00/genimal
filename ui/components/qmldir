@@ -10,3 +10,5 @@ ImageButton ImageButton.qml
 Results Results.qml
 HomeButton HomeButton.qml
 DownloadButton DownloadButton.qml
+TextResultButton TextResultButton.qml
+ImageResultButton ImageResultButton.qml

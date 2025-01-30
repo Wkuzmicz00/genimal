@@ -117,7 +117,7 @@ Rectangle {
             fillMode: Image.PreserveAspectFit
         }
     }
-    CustomButton {
+    ImageResultButton {
         id: customButton2
         x: 894
         y: 614
@@ -125,10 +125,7 @@ Rectangle {
         height: 47
         anchors.right: parent.right
         anchors.rightMargin: 108
-        buttonText: "FIND YOUR TWIN"
-        fontSize: 20
         buttonColor: "#8e2e85"
-        nextScreen: "../views/ResultView.ui.qml"
     }
 
     Image {

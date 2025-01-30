@@ -27,7 +27,7 @@ Rectangle {
                 name: "pressed"
                 when: mouseArea.pressed
                 PropertyChanges {
-                    target: customButton
+                    target: backButton
                     color: "#25a3f9"
                 }
             }

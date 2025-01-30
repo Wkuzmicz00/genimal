@@ -5,7 +5,7 @@ import qmlFiles
 
 
 Rectangle {
-    id: backButton
+    id: homeButton
         width: 50
         height: 50
         radius: 10
@@ -27,7 +27,7 @@ Rectangle {
                 name: "pressed"
                 when: mouseArea.pressed
                 PropertyChanges {
-                    target: customButton
+                    target: homeButton
                     color: "#25a3f9"
                 }
             }
@@ -38,7 +38,7 @@ Rectangle {
                 from: "*"
                 to: "pressed"
                 ColorAnimation {
-                    target: backButton
+                    target: homeButton
                     property: "color"
                     duration: 200
                 }
@@ -47,7 +47,7 @@ Rectangle {
                 from: "pressed"
                 to: "*"
                 ColorAnimation {
-                    target: backButton
+                    target: homeButton
                     property: "color"
                     duration: 200
                 }

@@ -14,14 +14,15 @@ Item{
         anchors.fill: parent
         x: 0
         y: 0
-        color: "transparent"
-        border.color: "white"
+        color: "black"
+        border.color: "black"
         border.width: 3
         radius: 10
-        property int charLimit: 1200
+
 
         TextArea {
             id: textArea
+            property int charLimit: 650
             width: 700
             height: 430
             font.pixelSize: 20
@@ -32,24 +33,21 @@ Item{
             wrapMode: TextArea.Wrap
 
             onTextChanged: {
-                if (text.length > rectangle.charLimit) {
-                    text = text.slice(0, rectangle.charLimit);
+                if (text.length > textArea.charLimit) {
+                    text = text.slice(0, textArea.charLimit);
                 }
                 textAreaHolder.text = text
             }
 
-            Keys.onPressed: {
+            Keys.onPressed: (event) => {
                 if (event.key === Qt.Key_Return || event.key === Qt.Key_Enter || event.key === Qt.Key_Tab) {
+                    event.accepted = true;
+                } else if (text.length >= textArea.charLimit) {
+                    if (event.key !== Qt.Key_Backspace && event.key !== Qt.Key_Delete) {
                         event.accepted = true;
-                }
-                if (text.length >= charLimit) {
-                    if (event.key === Qt.Key_Backspace || event.key === Qt.Key_Delete) {
-                        event.accepted = true;
-                    } else {
-                        event.accepted = false;  // Block all other keys
                     }
-                    } else {
-                        event.accepted = true;
+                } else {
+                    event.accepted = false;
                 }
             }
         }

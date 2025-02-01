@@ -83,32 +83,15 @@ Rectangle {
         }
     }
 
-    Button {
+    TextResultButton {
         id: customButton1
-        x: 400
-        y: 541
+        x: 526
+        y: 535
         width: 286
         height: 50
-        onClicked: 
-        {
-            stackView.push("../views/ResultView.ui.qml")
-            controller.process_text(textHolder.text)
-        }
+        buttonColor: "#cc6b8e"
     }
 
-    CustomButton {
-        id: customButton2
-        x: 518
-        y: 541
-        width: 286
-        height: 50
-        anchors.right: parent.right
-        anchors.rightMargin: 476
-        buttonText: "FIND YOUR TWIN"
-        fontSize: 20
-        buttonColor: "#8e2e85"
-        nextScreen: "../views/ResultView.ui.qml"
-    }
 
         Text {
             id: _text

@@ -66,6 +66,7 @@ Item {
         y: 554
         width: 194
         height: 45
+        buttonColor: "pink"
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: parent.bottom
         anchors.bottomMargin: 21

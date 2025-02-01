@@ -1,25 +1,20 @@
 import QtQuick
 import QtQuick.Controls
-import QtQuick.Dialogs
-
-import qmlFiles
 
 Rectangle {
-    id: imageButton
-        width: 530
-        height: 105
+    id: resultButton
+        width: 278
+        height: 47
         radius: 10
         color: "transparent"
         border.color: "white"
-        border.width: 2
-
-        property string buttonText
+        border.width: 3
         property string buttonColor
 
         Text {
             id : _test
             anchors.centerIn: parent
-            text: buttonText
+            text: "FIND MY TWIN"
             font.pixelSize: 20
             color: "white"
         }
@@ -28,7 +23,7 @@ Rectangle {
                 name: "pressed"
                 when: mouseArea.pressed
                 PropertyChanges {
-                    target: imageButton
+                    target: resultButton
                     color: buttonColor
                 }
             }
@@ -39,7 +34,7 @@ Rectangle {
                 from: "*"
                 to: "pressed"
                 ColorAnimation {
-                    target: imageButton
+                    target: resultButton
                     property: "color"
                     duration: 200
                 }
@@ -48,7 +43,7 @@ Rectangle {
                 from: "pressed"
                 to: "*"
                 ColorAnimation {
-                    target: imageButton
+                    target: resultButton
                     property: "color"
                     duration: 200
                 }
@@ -60,24 +55,8 @@ Rectangle {
             anchors.fill: parent
             onClicked:
             {
-                fileDialog.open()
-            }
-        }
-
-        FileDialog {
-            id: fileDialog
-            title: "Wybierz zdjęcie"
-            nameFilters: ["Obrazy (*.png *.jpg *.jpeg)"]
-            onAccepted: {
-                if (fileDialog.currentFile) {
-                    userImage.source = fileDialog.currentFile
-                } else {
-                    _text1.text = "Nie wybrano pliku"
-                }
-            }
-            onRejected: {
-                console.log("Wybór pliku anulowany")
+                stackView.push("../views/ResultView.ui.qml")
+                controller.process_text(textHolder.text)
             }
         }
 }
-

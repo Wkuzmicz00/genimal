@@ -7,7 +7,7 @@ from scipy.spatial import distance
 
 from torch import nn
 
-class personalty_detector():
+class PersonalityClassifier():
 
     def check_personality(self, user_text):
         result_json = self._calculate_distances(user_text)

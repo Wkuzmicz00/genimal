@@ -1,16 +1,27 @@
 from PySide6.QtCore import QObject, Signal, Slot
 
-from personality_detection import personalty_detector
+from model import MainModel
 
 import json
 
 class Controller(QObject):
     resultReady = Signal(str)
 
-    @Slot(str)
-    def process_text(self, text):
-        detector = personalty_detector()
-        result = detector.check_personality(text)
-        print(json.dumps(result))
+    def __init__(self):
+        super().__init__()
+        self.model = MainModel()
 
-        self.resultReady.emit(json.dumps(result))
+    @Slot(str)
+    def process_text(self, text: str):
+        json_list = self.model.caclculate_probability_from_text(text)
+
+        self.resultReady.emit(json.dumps(json_list))
+
+    @Slot(str)
+    def process_image(self, image_path: str):
+        json_list = self.model.caclculate_probability_from_image(image_path[7:])
+
+        self.resultReady.emit(json.dumps(json_list))
+
+
+

@@ -71,6 +71,7 @@ Rectangle {
             onAccepted: {
                 if (fileDialog.currentFile) {
                     userImage.source = fileDialog.currentFile
+                    imageSource = userImage.source
                 } else {
                     _text1.text = "Nie wybrano pliku"
                 }

@@ -9,6 +9,8 @@ Item {
     width: 620
     height: 620
 
+    property string imageSource: ""
+
     Rectangle {
         anchors.fill: parent
         color: "transparent"

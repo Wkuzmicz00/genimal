@@ -2,13 +2,18 @@ import QtQuick
 import QtQuick.Controls
 import qmlFiles
 
-Window {
+Item {
     id: splashWindow
     width: Constants.width
     height: Constants.height
     visible: true
-    flags: Qt.FramelessWindowHint | Qt.Window
-    color: "transparent"
+
+    // Ustawienie transparentnego tła
+    Rectangle {
+        width: parent.width
+        height: parent.height
+        color: "transparent"  // Tło przezroczyste
+    }
 
     AnimatedImage {
         id: image
@@ -20,8 +25,6 @@ Window {
         anchors.rightMargin: 240
         source: "../assets/images/animation.gif"
         fillMode: Image.PreserveAspectFit
-
-
     }
 
     Rectangle {

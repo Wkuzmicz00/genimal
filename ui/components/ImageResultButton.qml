@@ -56,7 +56,7 @@ Rectangle {
             onClicked:
             {
                 stackView.push("../views/ResultView.ui.qml")
-                controller.process_text(textHolder.text)
+                controller.process_image(imageUploader.imageSource)
             }
         }
 }

@@ -7,7 +7,7 @@ Item{
     width: 700
     height: 430
     id: textAreaHolder
-    property string text: "test"
+    property string text: ""
 
     Rectangle {
         id: rectangle

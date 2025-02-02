@@ -67,8 +67,8 @@ Rectangle {
         orientation: Gradient.Vertical
     }
 
-
     ImageUploader {
+        id: imageUploader
         anchors.centerIn: parent
         width: 620
         height: 620

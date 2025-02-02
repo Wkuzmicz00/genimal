@@ -67,7 +67,7 @@ Rectangle {
         FileDialog {
             id: fileDialog
             title: "Wybierz zdjęcie"
-            nameFilters: ["Obrazy (*.png *.jpg *.jpeg)"]
+            nameFilters: ["Obrazy (*.jpg *.jpeg)"]
             onAccepted: {
                 if (fileDialog.currentFile) {
                     userImage.source = fileDialog.currentFile

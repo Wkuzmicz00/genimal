@@ -22,17 +22,13 @@ class Controller(QObject):
 
     @Slot(str)
     def process_image(self, image_path: str):
-<<<<<<< Updated upstream
-        json_list = self.model.caclculate_probability_from_image(image_path[8:])
-=======
-        self.json_list = self.model.caclculate_probability_from_image(image_path[7:])
-
+        self.json_list = self.model.caclculate_probability_from_image(image_path[8:])
         self.resultReady.emit(json.dumps(self.json_list))
 
     @Slot()
     def create_raport(self):
         generate_raport(self.json_list)
->>>>>>> Stashed changes
+
 
 
 

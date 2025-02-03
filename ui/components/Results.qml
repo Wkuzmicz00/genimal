@@ -397,12 +397,12 @@ Rectangle {
     }
     Image {
         id: group4
-        x: 439
-        y: 381
-        width: 74
-        height: 111
-        source: "../assets/images/Group (4).png"
-        rotation: 74.738
+        x: 482
+        y: 336
+        width: 40
+        height: 70
+        source: "../assets/images/arrow.png"
+        rotation: 95.121
         fillMode: Image.PreserveAspectFit
         opacity: dataLoaded && percentCompleted ? 1 : 1
         visible: dataLoaded && percentCompleted
@@ -414,14 +414,14 @@ Rectangle {
         }
     }
     Text {
-        x: 408
-        y: 420
+        x: 421
+        y: 400
         width: 162
         height: 28
         text: "Check the other"
         font.pixelSize: 10
         horizontalAlignment: Text.AlignHCenter
-        rotation: -5.718
+        rotation: 0
         font.italic: true
         font.bold: false
         color: "white"

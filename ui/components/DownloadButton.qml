@@ -59,7 +59,7 @@ Rectangle {
             anchors.fill: parent
             anchors.rightMargin: 0
             onClicked: {
-
+                controller.create_raport()
             }
         }
 }

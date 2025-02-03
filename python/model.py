@@ -5,7 +5,6 @@ from PIL import Image
 from personality_classifier import PersonalityClassifier
 from animal_classifier import AnimalClassifier
 
-import generate_html as huj
 
 import os
 
@@ -18,13 +17,12 @@ class MainModel():
         image = Image.open(image_path)
         result = self.animal_classifier.predict(image)
         json_list = self._parse_to_json(result)
-        huj.generate_raport(json_list)
+        print("XD")
 
         return json_list
 
     def caclculate_probability_from_text(self, text: str) -> List[Dict[str, Union[str, float]]]:
         json_list = self.personality_classifier.check_personality(text)
-        huj.generate_raport(json_list)
 
         return json_list
 

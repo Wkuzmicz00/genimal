@@ -86,7 +86,7 @@ Rectangle {
     }
     Image {
         id: cat
-        x: 644
+        x: 647
         y: 594
         width: 165
         height: 88

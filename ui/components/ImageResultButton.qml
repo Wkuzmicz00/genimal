@@ -57,6 +57,7 @@ Rectangle {
             {
                 stackView.push("../views/ResultView.ui.qml")
                 controller.process_image(imageUploader.imageSource)
+                console.log("test")
             }
         }
 }

@@ -42,7 +42,6 @@ class Controller(QObject):
         worker.resultReady.connect(self.on_result_ready)
         worker.errorOccurred.connect(self.on_error_occurred)
         worker.finished.connect(lambda: self.on_worker_finished(worker))
-        print("XD")
         worker.run()
 
     @Slot(list)

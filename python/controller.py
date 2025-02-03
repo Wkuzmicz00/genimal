@@ -1,7 +1,9 @@
 from PySide6.QtCore import QObject, Signal, Slot, QThread
 import json
-from model import ModelWorker, ResultDict
-from typing import List, Dict, Union
+from model import ModelWorker
+from typing import List, Dict
+
+from generate_html import generate_raport
 
 class Controller(QObject):
     """
@@ -15,6 +17,7 @@ class Controller(QObject):
         Initialize the Controller.
         """
         super().__init__()
+        self.json_list = []
 
     @Slot(str)
     def process_text(self, text: str):
@@ -52,6 +55,7 @@ class Controller(QObject):
         Args:
             result (List[ResultDict]): The result of the classification.
         """
+        self.json_list = result
         self.resultReady.emit(json.dumps(result))
 
     @Slot(str)
@@ -74,3 +78,7 @@ class Controller(QObject):
         """
         worker.quit()
         worker.wait()
+
+    @Slot()
+    def create_raport(self):
+        generate_raport(self.json_list)

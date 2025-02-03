@@ -34,7 +34,7 @@ class PersonalityClassifier():
     def _add_image_path(self, data):
         for i in range(len(data)):
             path = os.path.abspath(f"./../ui/assets/animal_images/{data[i]['name'].lower()}.png")
-            print(path)
+            path = r"file:///" + path
             data[i]['image_path'] = path
 
         return data

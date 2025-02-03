@@ -19,7 +19,7 @@ class Controller(QObject):
 
     @Slot(str)
     def process_image(self, image_path: str):
-        json_list = self.model.caclculate_probability_from_image(image_path[7:])
+        json_list = self.model.caclculate_probability_from_image(image_path[8:])
 
         self.resultReady.emit(json.dumps(json_list))
 

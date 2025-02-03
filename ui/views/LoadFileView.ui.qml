@@ -113,7 +113,7 @@ Rectangle {
             y: 389
             width: 31
             height: 36
-            source: "../assets/images/Group (2).png"
+            source: "../assets/images/happy.png"
             fillMode: Image.PreserveAspectFit
         }
     }
@@ -134,7 +134,7 @@ Rectangle {
         y: 626
         width: 30
         height: 63
-        source: "../assets/images/Group (3).png"
+        source: "../assets/images/arrow.png"
         rotation: 62.115
         fillMode: Image.PreserveAspectFit
     }

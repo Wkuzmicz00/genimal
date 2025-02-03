@@ -117,7 +117,7 @@ Rectangle {
         y: 172
         width: 651
         height: 396
-        source: "../assets/images/Group 5357.png"
+        source: "../assets/images/laptop.png"
         fillMode: Image.PreserveAspectFit
 
         Image {

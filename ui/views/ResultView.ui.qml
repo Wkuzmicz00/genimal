@@ -72,7 +72,7 @@ Rectangle {
         y: 38
         width: 822
         height: 644
-        source: "../assets/images/Group 457.png"
+        source: "../assets/images/monitor.png"
         fillMode: Image.PreserveAspectFit
         Results {
             height: 484
@@ -113,7 +113,7 @@ Rectangle {
         id: _37
         x: 184
         y: 18
-        source: "../assets/images/37.png"
+        source: "../assets/images/girl.png"
         fillMode: Image.PreserveAspectFit
     }
 

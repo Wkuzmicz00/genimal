@@ -1,3 +1,4 @@
+
 /*
 This is a UI file (.ui.qml) that is intended to be edited in Qt Design Studio only.
 It is supposed to be strictly declarative and only uses a subset of QML. If you edit
@@ -65,7 +66,7 @@ Rectangle {
         }
         orientation: Gradient.Vertical
     }
-    Image{
+    Image {
         id: image
         x: 236
         y: 38
@@ -92,7 +93,7 @@ Rectangle {
         source: "../assets/images/Cat.png"
         fillMode: Image.PreserveAspectFit
     }
-    HomeButton{
+    HomeButton {
         x: 25
         y: 642
     }
@@ -114,5 +115,12 @@ Rectangle {
         y: 18
         source: "../assets/images/girl.png"
         fillMode: Image.PreserveAspectFit
+    }
+
+    DownloadButton {
+        x: 150
+        y: 642
+        width: 50
+        height: 50
     }
 }

@@ -7,6 +7,8 @@ from scipy.spatial import distance
 
 from torch import nn
 
+import os
+
 class PersonalityClassifier():
 
     def check_personality(self, user_text):
@@ -31,7 +33,9 @@ class PersonalityClassifier():
 
     def _add_image_path(self, data):
         for i in range(len(data)):
-            data[i]['image_path'] = f"./../assets/animal_images/{data[i]['name'].lower()}.png"
+            path = os.path.abspath(f"./../ui/assets/animal_images/{data[i]['name'].lower()}.png")
+            print(path)
+            data[i]['image_path'] = path
 
         return data
 

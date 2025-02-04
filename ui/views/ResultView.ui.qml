@@ -83,6 +83,18 @@ Rectangle {
             anchors.rightMargin: 50
             anchors.topMargin: 15
         }
+
+        Text {
+            id: _text
+            x: -76
+            y: 621
+            width: 94
+            height: 15
+            color: "#ffffff"
+            text: qsTr("Save your results!")
+            font.pixelSize: 12
+            font.italic: true
+        }
     }
     Image {
         id: cat
@@ -118,9 +130,20 @@ Rectangle {
     }
 
     DownloadButton {
-        x: 150
+        x: 97
         y: 642
         width: 50
         height: 50
+    }
+
+    Image {
+        id: _right
+        x: 144
+        y: 631
+        width: 64
+        height: 46
+        source: "../assets/images/Right.png"
+        rotation: -320.121
+        fillMode: Image.PreserveAspectFit
     }
 }

@@ -73,7 +73,7 @@ class ModelWorker(QThread):
                 print(f"Warning: Image not found for {name}")
                 image_path = ""
 
-            image_path = r"file://" + image_path
+            image_path = r"file:///" + image_path
             json_list.append({
                 "name": name,
                 "image_path": image_path,
